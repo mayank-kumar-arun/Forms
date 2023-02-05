@@ -1,7 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
+import DateView from 'react-datepicker'
 import * as Yup from "yup";
 import TextError from "./TextError";
+import "react-datepicker/dist/react-datepicker.css";
 
 const initialValues = {
   patientID: "",
@@ -69,7 +71,21 @@ function DischargeNotes() {
               <label htmlFor="dateofdischarge" className="mb-2">
                 Date of Discharge
               </label>
-              <Field type="text" id="dateofdischarge" name="dateofdischarge" />
+               <Field name="dateofdischarge">
+        {({ form, field }) => {
+          const { setFieldValue } = form
+          const { value } = field
+          return (
+            <DateView
+              id="dateofdischarge"
+              {...field}
+              
+              selected={value}
+              onChange={val => setFieldValue("dateofdischarge", val)}
+            />
+          )
+        }}
+               </Field>
               <ErrorMessage name="dateofdischarge" component={TextError} />
             </div>
             <div className="col-md-3 col-lg-3 col-sm-12 d-flex flex-column">

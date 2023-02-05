@@ -1,7 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
+import DateView from 'react-datepicker'
 import TextError from "./TextError";
+import "react-datepicker/dist/react-datepicker.css";
 
 const initialValues = {
   date: "",
@@ -51,11 +53,21 @@ function MedicalHistory() {
               </label>
             </div>
             <div className="col-md-2 col-lg-2 col-sm-12">
-              <Field
-                type="text"
-                id="date"
-                name="date"
-              />
+               <Field name="date">
+        {({ form, field }) => {
+          const { setFieldValue } = form
+          const { value } = field
+          return (
+            <DateView
+              id="date"
+              {...field}
+              
+              selected={value}
+              onChange={val => setFieldValue("date", val)}
+            />
+          )
+        }}
+               </Field>
               <ErrorMessage name="date" component={TextError} />
             </div>
             <div className="col-md-2 col-lg-2 col-sm-12 ">
@@ -148,7 +160,21 @@ function MedicalHistory() {
               </label>
             </div>
             <div className="col-md-2 col-lg-2 col-sm-12 ">
-              <Field type="text" id="admissiondate" name="admissiondate" />
+               <Field name="admissiondate">
+        {({ form, field }) => {
+          const { setFieldValue } = form
+          const { value } = field
+          return (
+            <DateView
+              id="admissiondate"
+              {...field}
+              
+              selected={value}
+              onChange={val => setFieldValue("admissiondate", val)}
+            />
+          )
+        }}
+               </Field>
               {/* <ErrorMessage name="name" component={TextError} /> */}
             </div>
             <div className="col-md-2 col-lg-2 col-sm-12 ">
@@ -157,7 +183,22 @@ function MedicalHistory() {
               </label>
             </div>
             <div className="col-md-2 col-lg-2 col-sm-12 ">
-              <Field type="text" id="dischargedate" name="dischargedate" />
+               <Field name="dischargedate">
+        {({ form, field }) => {
+          const { setFieldValue } = form
+          const { value } = field
+          return (
+            <DateView
+              id="dischargedate"
+              {...field}
+              
+              selected={value}
+              onChange={val => setFieldValue("dischargedate", val)}
+            />
+          )
+        }}
+               </Field>
+              {/* <Field type="text" id="dischargedate" name="dischargedate" /> */}
               {/* <ErrorMessage name="dateofdischarge" component={TextError} /> */}
             </div>
           </div>
