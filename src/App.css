@@ -1,0 +1,32 @@
+
+label {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 36px;
+  color: #555454;
+}
+
+input{
+  height: 32px;
+  border: solid 1px #dbd8d8;
+  border-radius: 3px;
+  background: #fdfdfd;
+  width: -webkit-fill-available;
+}
+textarea {
+  border: solid 1px #dbd8d8;
+  border-radius: 3px;
+  min-height: 80px;
+  background: #fdfdfd;
+  width: -webkit-fill-available;
+
+}
+.buttonFullWidth{
+  width: -webkit-fill-available;
+}
+
+.error {
+  color: red;
+}
