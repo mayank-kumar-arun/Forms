@@ -247,6 +247,16 @@ const InvestigationForm = () => {
                         Day {i + 1}
                       </th>
                     ))}
+                    <th><button
+                    className="btn btn-sm m-2 btn-primary"
+                    type="button"
+                    style={{minWidth:"76px"}}
+                    onClick={() => {
+                      setColumns(columns + 1);
+                    }}
+                  >
+                    Add Date
+                  </button></th>
                   </tr>
                 </thead>
                 <tbody>
@@ -257,7 +267,7 @@ const InvestigationForm = () => {
                         <td key={i}>
                           <Field
                             as="textarea"
-                            className="w-100"
+                            className="w-50"
                             name={`rows[${index}].col${i + 1}`}
                           />
                         </td>
@@ -297,15 +307,6 @@ const InvestigationForm = () => {
                   >
                     Add Row
                   </button>
-                  <button
-                    className="btn btn-sm m-2 btn-primary"
-                    type="button"
-                    onClick={() => {
-                      setColumns(columns + 1);
-                    }}
-                  >
-                    Add Date
-                  </button>
                 </div>
               </div>
             </div>
@@ -321,10 +322,20 @@ const InvestigationForm = () => {
                   <tr>
                     <th></th>
                     {Array.from({ length: columnsUrine }).map((_, i) => (
-                      <th className="text-center p-2" key={i}>
+                      <th className=" p-2" key={i}>
                         Day {i + 1}
                       </th>
                     ))}
+                    <th><button
+                    className="btn btn-sm m-2 btn-primary"
+                    type="button"
+                    style={{minWidth:"76px"}}
+                    onClick={() => {
+                      setColumns(columns + 1);
+                    }}
+                  >
+                    Add Date
+                  </button></th>
                   </tr>
                 </thead>
                 <tbody>
@@ -378,15 +389,6 @@ const InvestigationForm = () => {
                   >
                     Add Row
                   </button>
-                  <button
-                    className="btn btn-sm m-2 btn-primary"
-                    type="button"
-                    onClick={() => {
-                      setColumnsUrine(columnsUrine + 1);
-                    }}
-                  >
-                    Add Date
-                  </button>
                 </div>
               </div>
             </div>
@@ -406,6 +408,16 @@ const InvestigationForm = () => {
                         Day {i + 1}
                       </th>
                     ))}
+                    <th><button
+                    className="btn btn-sm m-2 btn-primary"
+                    type="button"
+                    style={{minWidth:"76px"}}
+                    onClick={() => {
+                      setColumns(columns + 1);
+                    }}
+                  >
+                    Add Date
+                  </button></th>
                   </tr>
                 </thead>
                 <tbody>
@@ -462,15 +474,6 @@ const InvestigationForm = () => {
                   >
                     Add Row
                   </button>
-                  <button
-                    className="btn btn-sm m-2 btn-primary"
-                    type="button"
-                    onClick={() => {
-                      setColumnsBloodSugar(columnsBloodSugar + 1);
-                    }}
-                  >
-                    Add Date
-                  </button>
                 </div>
               </div>
             </div>
@@ -490,6 +493,16 @@ const InvestigationForm = () => {
                         Day {i + 1}
                       </th>
                     ))}
+                    <th><button
+                    className="btn btn-sm m-2 btn-primary"
+                    type="button"
+                    style={{minWidth:"76px"}}
+                    onClick={() => {
+                      setColumns(columns + 1);
+                    }}
+                  >
+                    Add Date
+                  </button></th>
                   </tr>
                 </thead>
                 <tbody>
@@ -543,15 +556,6 @@ const InvestigationForm = () => {
                   >
                     Add Row
                   </button>
-                  <button
-                    className="btn btn-sm m-2 btn-primary"
-                    type="button"
-                    onClick={() => {
-                      setColumnsRenal(columnsRenal + 1);
-                    }}
-                  >
-                    Add Date
-                  </button>
                 </div>
               </div>
             </div>
@@ -571,6 +575,16 @@ const InvestigationForm = () => {
                         Day {i + 1}
                       </th>
                     ))}
+                    <th><button
+                    className="btn btn-sm m-2 btn-primary"
+                    type="button"
+                    style={{minWidth:"76px"}}
+                    onClick={() => {
+                      setColumns(columns + 1);
+                    }}
+                  >
+                    Add Date
+                  </button></th>
                   </tr>
                 </thead>
                 <tbody>
@@ -624,15 +638,6 @@ const InvestigationForm = () => {
                   >
                     Add Row
                   </button>
-                  <button
-                    className="btn btn-sm m-2 btn-primary"
-                    type="button"
-                    onClick={() => {
-                      setColumnsHeptic(columnsHeptic + 1);
-                    }}
-                  >
-                    Add Date
-                  </button>
                 </div>
               </div>
             </div>
@@ -652,6 +657,16 @@ const InvestigationForm = () => {
                         Day {i + 1}
                       </th>
                     ))}
+                    <th><button
+                    className="btn btn-sm m-2 btn-primary"
+                    type="button"
+                    style={{minWidth:"76px"}}
+                    onClick={() => {
+                      setColumns(columns + 1);
+                    }}
+                  >
+                    Add Date
+                  </button></th>
                   </tr>
                 </thead>
                 <tbody>
@@ -708,15 +723,6 @@ const InvestigationForm = () => {
                   >
                     Add Row
                   </button>
-                  <button
-                    className="btn btn-sm m-2 btn-primary"
-                    type="button"
-                    onClick={() => {
-                      setColumnsCardiac(columnsCardiac + 1);
-                    }}
-                  >
-                    Add Date
-                  </button>
                 </div>
               </div>
             </div>
@@ -736,6 +742,16 @@ const InvestigationForm = () => {
                         Day {i + 1}
                       </th>
                     ))}
+                    <th><button
+                    className="btn btn-sm m-2 btn-primary"
+                    type="button"
+                    style={{minWidth:"76px"}}
+                    onClick={() => {
+                      setColumns(columns + 1);
+                    }}
+                  >
+                    Add Date
+                  </button></th>
                   </tr>
                 </thead>
                 <tbody>
@@ -789,22 +805,18 @@ const InvestigationForm = () => {
                   >
                     Add Row
                   </button>
-                  <button
-                    className="btn btn-sm m-2 btn-primary"
-                    type="button"
-                    onClick={() => {
-                      setColumnsOther(columnsOther + 1);
-                    }}
-                  >
-                    Add Date
-                  </button>
                 </div>
               </div>
             </div>
 
-            <button className="btn btn-sm m-2 btn-success" type="submit">
-              Submit
-            </button>
+            <div className="text-end">
+              <button
+                className="btn btn-success mt-4"
+                type="submit"
+              >
+                Submit
+              </button>
+             </div>
           </div>
         </Form>
       )}

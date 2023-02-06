@@ -261,14 +261,14 @@ function MedicalHistory() {
               <Field as="textarea" id="history" name="history" />
             </div>
           </div>
-
+          <div className="text-end">
           <button
-            className="btn btn-primary buttonFullWidth mt-4"
+            className="btn btn-success mt-4"
             type="submit"
-            //   disabled={!formik.isValid || formik.isSubmitting}
           >
             Submit
           </button>
+          </div>
         </div>
       </Form>
     </Formik>

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import TextError from "./TextError";
+import * as Yup from "yup";
 import DateView from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
@@ -32,14 +33,23 @@ const IcuWardCare = () => {
     setTimeout(() => {
       console.log(JSON.stringify(values, null, 2));
       setSubmitting(false);
-      resetForm()
+      resetForm();
     }, 400);
   };
+
+  const validationSchema = Yup.object({
+    patientID: Yup.string().required("Required"),
+    name: Yup.string().required("Required"),
+    date: Yup.string().required("Required"),
+    sex: Yup.string().required("Required"),
+  });
+  
 
   return (
     <Formik
       initialValues={{ rows }}
       onSubmit={onSubmit}
+      validationSchema={validationSchema}
     >
       {({ values, setFieldValue }) => (
         <Form>
@@ -65,26 +75,26 @@ const IcuWardCare = () => {
                 <ErrorMessage name="name" component={TextError} />
               </div>
               <div className="col-md-3 col-lg-3 col-sm-12 d-flex flex-column">
-                <label htmlFor="dateofdischarge" className="mb-2">
+                <label htmlFor="date" className="mb-2">
                   Date
                 </label>
-                <Field name="dateofdischarge">
+                <Field name="date">
                   {({ form, field }) => {
                     const { setFieldValue } = form;
                     const { value } = field;
                     return (
                       <DateView
-                        id="dateofdischarge"
+                        id="date"
                         {...field}
                         selected={value}
                         onChange={(val) =>
-                          setFieldValue("dateofdischarge", val)
+                          setFieldValue("date", val)
                         }
                       />
                     );
                   }}
                 </Field>
-                <ErrorMessage name="dateofdischarge" component={TextError} />
+                <ErrorMessage name="date" component={TextError} />
               </div>
               <div className="col-md-3 col-lg-3 col-sm-12 d-flex flex-column">
                 <label htmlFor="sex" className="mb-2">
@@ -108,6 +118,16 @@ const IcuWardCare = () => {
                         Day {i + 1}
                       </th>
                     ))}
+                    <th><button
+              className="btn btn-sm m-2 btn-primary"
+              style={{minWidth: "76px"}}
+              type="button"
+              onClick={() => {
+                setColumns(columns + 1);
+              }}
+            >
+              Add Date
+            </button></th>
                   </tr>
                 </thead>
                 <tbody>
@@ -128,16 +148,14 @@ const IcuWardCare = () => {
                 </tbody>
               </table>
             </div>
-            <button
-            className="btn btn-sm m-2 btn-primary"
-              type="button"
-              onClick={() => {
-                setColumns(columns + 1);
-              }}
-            >
-              Add Date
-            </button>
-            <button className="btn btn-sm m-2 btn-success" type="submit">Submit</button>
+            <div className="text-end">
+              <button
+                className="btn btn-success mt-4"
+                type="submit"
+              >
+                Submit
+              </button>
+             </div>
           </div>
         </Form>
       )}
