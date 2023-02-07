@@ -1,5 +1,5 @@
 import React from "react";
-import { Formik, Form, Field, ErrorMessage } from "formik";
+import { Formik, Form, Field} from "formik";
 import jsPDF from 'jspdf';
 import _ from 'lodash';
 import DateView from 'react-datepicker'
@@ -22,8 +22,6 @@ const initialValues = {
   otherdiagnosis: "",
   principaldiagnosis:"",
   history:"",
-  dateofdischarge: "",
-  sex: "",
   testsdone:'',
   medication:'',
   conditionondischarge: "",
@@ -385,35 +383,40 @@ function PatientSummaryDischarge() {
 //     pdf.addImage(canvas.toDataURL("image/png"), "PNG", 0, 0, 211, 298);
 //     pdf.save("form.pdf");
 //   });
-const pdf = new jsPDF("p", "mm", "a4");
+        const pdf = new jsPDF("p", "mm", "a4");
 
-html2canvas(document.querySelector(".patient-details")).then((canvas) => {
-  pdf.addImage(canvas.toDataURL("image/png"), "PNG", 0, 0, 211, 298);
+        html2canvas(document.querySelector(".patient-details")).then((canvas) => {
+        pdf.addImage(canvas.toDataURL("image/png"), "PNG", 5, 0, 200, 298);
 
-  html2canvas(document.querySelector(".diagnosis-information")).then(
-    (canvas) => {
-      pdf.addPage();
-      pdf.addImage(canvas.toDataURL("image/png"), "PNG", 0, 0, 211, 298);
-      pdf.save("form.pdf");
-    }
-  );
-});
-
-     
+    });
+    
+    html2canvas(document.querySelector(".diagnosis-information")).then(
+        (canvas) => {
+        pdf.addPage();
+        pdf.addImage(canvas.toDataURL("image/png"), "PNG", 5, 0, 200, 298);
+        pdf.save("form.pdf");
+        }
+    );
+    
       setSubmitting(false);
       resetForm();
     }, 400);
   };
-
+  
   return (
     <Formik
-      initialValues={initialValues}
-      onSubmit={onSubmit}
+    initialValues={initialValues}
+    onSubmit={onSubmit}
     >
         {(formikProps) => (
       <Form >
         <div className="container mt-4 pt-3">
+           
         <div className="patient-details">
+        <div className="text-center mb-4">
+                <h2>SPANDAN MULTI SPECIALITY</h2>
+                <span className="fw-bold">HOSPITAL TREATMENT - DISCHARGE SUMMARY </span>
+            </div>
             <PatientDetails formikProps={formikProps} />
           </div>
           <div className="diagnosis-information">
