@@ -47,7 +47,7 @@ const IcuWardCare = () => {
 
   return (
     <Formik
-      initialValues={{ rows }}
+      initialValues={{ rows , patientID:'' , name:'', date:'' , sex:'',  }}
       onSubmit={onSubmit}
       validationSchema={validationSchema}
     >
