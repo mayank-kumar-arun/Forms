@@ -229,29 +229,27 @@ function MedicalHistory() {
           </div>
 
           <div className="row mb-4">
-            <div className="col-md-3 col-lg-3 col-sm-12">
-              <label htmlFor="otherdiagnosis" className="mb-2">
+            <div className="col-md-12 col-lg-12 col-sm-12 ">
+              <label htmlFor="otherdiagnosis">
                 Other Diagnosis
               </label>
-            </div>
-            <div className="col-md-3 col-lg-3 col-sm-12">
               <Field
-                className="inputField"
-                type="text"
+                as="textarea"
                 id="otherdiagnosis"
                 name="otherdiagnosis"
-              />
-              {/* <ErrorMessage name="patientID" component={TextError} /> */}
+                />
             </div>
-            <div className="col-md-3 col-lg-3 col-sm-12 ">
-              <label htmlFor="principaldiagnosis" className="mb-2">
-                Principal Diagnosis
-              </label>
-            </div>
-            <div className="col-md-3 col-lg-3 col-sm-12 ">
-              <Field type="text" id="principaldiagnosis" name="principaldiagnosis" />
-              {/* <ErrorMessage name="name" component={TextError} /> */}
-            </div>
+          </div>
+
+          <div className=" row mb-4">
+
+          <div className="col-md-12 col-lg-12 col-sm-12 ">
+          <label htmlFor="principaldiagnosis">
+              Principal Diagnosis
+          </label>
+
+          <Field as="textarea" id="principaldiagnosis" name="principaldiagnosis" />
+          </div>
           </div>
 
           <div className="row mb-4">
